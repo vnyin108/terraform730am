@@ -92,3 +92,15 @@ resource "aws_instance" "name" {
     vpc_security_group_ids = [ aws_security_group.allow_tls.id ]
 
 }
+
+#natgateway 
+
+resource "aws_nat_gateway" "name"{
+    subnet_id = aws_subnet.name.id
+    allocation_id = aws_eip.name.id
+    
+    tags = {
+      Name = "natgate"
+    }
+  
+}
