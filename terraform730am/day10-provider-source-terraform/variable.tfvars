@@ -1,0 +1,1 @@
+bucket = "mys3bucket"
